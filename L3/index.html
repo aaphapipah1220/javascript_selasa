@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input, Output & Function</title>
+  </head>
+  <body>
+    <div>
+      <p id="test2_display"></p>
+    </div>
+
+    <div id="test1">
+      <p>Slayyy</p>
+    </div>
+
+    <input type="submit" value="Show me please!" onclick="btn_value()" />
+
+    <form action="">
+      <input type="text" placeholder="username / email" />
+      <!-- password -->
+      <input type="submit" value="Login" onclick="baru()" />
+    </form>
+
+    <script>
+      // note:
+      // innerHTML = with tag
+      // innerText = only text
+
+      document.getElementById("test1").innerHTML;
+      document.getElementById("test2_display").innerHTML =
+        "<p>Display textttt</p>";
+
+      let innerhtml_test = document.getElementById("test1").innerText;
+      alert(innerhtml_test);
+
+      function btn_value() {
+        alert("Hi, nice to see you. Thanks to show me");
+      }
+
+      function baru() {}
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
