@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 1 - Click button</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <script>
+      // variable (money, clickvalue, autovalue, toggle)
+
+      let money = 0;
+      let clickvalue = 1;
+      let autovalue = 0;
+      let toggle = 0;
+
+      function autoIncrement() {
+        autovalue += 1;
+        money -= 20;
+
+        document.getElementById(
+          "auto_display"
+        ).innerHTML = `Auto Click Power: ${autovalue}`;
+        document.getElementById("number").innerHTML = `${money}`;
+
+        // setInterval = update secara realtime
+
+        if (toggle == 0) {
+          toggle++;
+          setInterval(function () {
+            money += autovalue;
+            document.getElementById("number").innerHTML = money;
+          }, 1000);
+        }
+      }
+
+      function testing() {
+        money += clickvalue;
+        document.getElementById("number").innerHTML = money;
+      }
+
+      //   jquery
+      $(document).ready(function () {
+        yourFunction();
+      });
+
+      function yourFunction() {
+        document.getElementById("test2").style.display = "none";
+        document.getElementById("number").innerHTML = money;
+        document.getElementById(
+          "clickdisplay"
+        ).innerHTML = `Click Power ${clickvalue}`;
+        document.getElementById(
+          "auto_display"
+        ).innerHTML = `Auto Click Power ${autovalue}`;
+
+        setInterval(function () {
+          if (money >= 20) {
+            document.getElementById("test2").style.display = "";
+          } else {
+            document.getElementById("test2").style.display = "none";
+          }
+        }, 1000);
+      }
+    </script>
+
+    <div>
+      <h1 class="clicker_app">Clicker Application</h1>
+      <h2 id="number" class="number_clicker"></h2>
+      <h4 id="auto_display"></h4>
+      <h4 id="clickdisplay"></h4>
+    </div>
+
+    <div>
+      <input
+        type="submit"
+        value="Click me Jo!"
+        class="button"
+        onclick="testing()"
+      />
+      <input
+        type="submit"
+        id="test2"
+        class="button"
+        value="Auto Click Jo!"
+        onclick="autoIncrement()"
+      />
+    </div>
+  </body>
+</html>

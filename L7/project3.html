@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer timerannn</title>
+
+    <script src="script3.js"></script>
+  </head>
+  <body>
+    <script>
+      function start_stop() {
+        if (start) {
+          start = false;
+        } else {
+          start = true;
+        }
+      }
+    </script>
+
+    <center>
+      <div>
+        <input type="button" value="start" onclick="start_stop()" />
+        <h1 id="timer"></h1>
+      </div>
+    </center>
+  </body>
+</html>
